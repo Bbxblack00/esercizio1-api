@@ -8,20 +8,24 @@ function init() {
         success: function(data) {
             const res = data.response;
             applyBg(res);
+            console.log(res);
         },
         error: function() {
             console.log('error');
         }
     });
-    console.log('hello');
 }
 function applyBg(type) {
-    const target = $('#target');
-    // console.log(target, type);
+    const target = $('.box');
+    const newBox = documet.getElementById('target');
+    newBox.innerHTML += '<div class="box"></div>';
     if (type) {
         target.addClass('bg-red');
     } else {
         target.addClass('bg-green');
     }
+}
+function blockOnClick() {
+    init();
 }
 document.addEventListener('DOMContentLoaded', init);

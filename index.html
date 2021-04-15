@@ -12,18 +12,16 @@
         <!-- jquery -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <!-- css -->
-        <link rel="stylesheet" href="style.css">
-        <script src="script.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/script.js"></script>
     </head>
     <body>
         <div id="app" class="container vh-100">
             <div class="row h-100">
                 <div class="col-12 d-flex">
                     <div class="m-auto">
-                        <button class="btn btn-primary">ADD BOX</button>
+                        <button class="btn btn-primary" @click="blockOnClick()">ADD BOX</button>
                         <div id="target d-flex">
-                            <div class="box bg-red"></div>
-                            <div class="box bg-green"></div>
                         </div>
                     </div>
                 </div>
