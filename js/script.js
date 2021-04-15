@@ -1,13 +1,15 @@
 function addClickListener() {
-    const btn = $('#btn');
-    btn.click(boxGenerator);
+    const btn = $('.btn');
+    btn.click(numberGenerator);
 }
-function boxGenerator() {
+
+function numberGenerator() {
     $.ajax({
-        url: 'https://flynn.boolean.careers/exercises/api/random/boolean',
+        url: 'https://flynn.boolean.careers/exercises/api/random/int',
         method: 'GET',
         success: function(data) {
             const res = data.response;
+            console.log(res);
             generateBox(res);
         },
         error: function() {
@@ -17,11 +19,13 @@ function boxGenerator() {
 }
 function generateBox(type) {
     const target = $('#target');
-    if (type) {
-        target.append('<div class="box bg-red"></div>');
-    } else {
-        target.append('<div class="box bg-green"></div>');
-    }
+
+    target.append('<div class="box bg-red"></div>');
+   // if (type % 2 == 0) {
+   //     target.append('<div class="box bg-red">' + type + '</div>');
+   // } else {
+   //     target.append('<div class="box bg-green">' + type + '</div>');
+   // }
 }
 function init() {
    addClickListener();
