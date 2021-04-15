@@ -1,31 +1,30 @@
-function init() {
-    const min = 50;
-    const max = 200;
-    const items = 10;
+function addClickListener() {
+    const btn = $('#btn');
+    btn.click(boxGenerator);
+}
+function boxGenerator() {
     $.ajax({
-        url: "https://flynn.boolean.careers/exercises/api/random/boolean",
+        url: 'https://flynn.boolean.careers/exercises/api/random/boolean',
         method: 'GET',
         success: function(data) {
             const res = data.response;
-            applyBg(res);
-            console.log(res);
+            generateBox(res);
         },
         error: function() {
             console.log('error');
         }
     });
 }
-function applyBg(type) {
-    const target = $('.box');
-    const newBox = documet.getElementById('target');
-    newBox.innerHTML += '<div class="box"></div>';
+function generateBox(type) {
+    const target = $('#target');
     if (type) {
-        target.addClass('bg-red');
+        target.append('<div class="box bg-red"></div>');
     } else {
-        target.addClass('bg-green');
+        target.append('<div class="box bg-green"></div>');
     }
 }
-function blockOnClick() {
-    init();
+function init() {
+   addClickListener();
 }
 document.addEventListener('DOMContentLoaded', init);
+
