@@ -17,14 +17,14 @@ function numberGenerator() {
         }
     });
 }
-function generateBox(type) {
+function generateBox(value) {
     const target = $('#target');
 
-    console.log(' ciao');
 
-    target.innerHTML += '<div class="box bg-red"><h1>' + type + '</h1></div>';
 
-   // target.append('<div class="box bg-red"><h1>' + type + '</h1></div>');
+    // target.innerHTML += '<div class="box bg-red"><h1>' + type + '</h1></div>';
+
+   target.append('<div class="box bg-red"><h1>' + value + '</h1></div>');
    // if (type % 2 == 0) {
    //     target.append('<div class="box bg-red">' + type + '</div>');
    // } else {
@@ -35,4 +35,3 @@ function init() {
    addClickListener();
 }
 document.addEventListener('DOMContentLoaded', init);
-
